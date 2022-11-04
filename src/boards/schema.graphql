@@ -1,0 +1,32 @@
+type Board {
+  id: ID!
+  title: String!
+  content: String!
+  status: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+input NewBoard {
+  title: String!
+  content: String!
+  status: String!
+}
+
+input UpdateBoard {
+  id: ID!
+  title: String
+  content: String
+  status: String
+}
+
+type Query {
+  getAllBoard: [Board!]!
+  getBoardById(id: ID!): Board
+}
+
+type Mutation {
+  createBoard(input: NewBoard): Board!
+  updateBoard(input: UpdateBoard): Board
+  deleteBoard(id: ID!): Board
+}
